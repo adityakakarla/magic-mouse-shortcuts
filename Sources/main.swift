@@ -1,4 +1,4 @@
-// TapClick — adds tap-to-click to the Apple Magic Mouse.
+// Magic Mouse Shortcuts — adds tap to click and pinch to zoom to the Apple Magic Mouse.
 //
 // Reads raw touch frames from the private MultitouchSupport framework, detects short
 // stationary taps on the mouse surface, and posts a synthetic click at the cursor.
@@ -11,7 +11,7 @@ import ServiceManagement
 let debug = CommandLine.arguments.contains("--debug")
 
 func log(_ message: @autoclosure () -> String) {
-    if debug { print("[TapClick] \(message())"); fflush(stdout) }
+    if debug { print("[MagicMouseShortcuts] \(message())"); fflush(stdout) }
 }
 
 // MARK: - MultitouchSupport bindings (private framework, loaded at runtime)
@@ -477,7 +477,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         login.state = SMAppService.mainApp.status == .enabled ? .on : .off
         menu.addItem(login)
 
-        menu.addItem(NSMenuItem(title: "Quit TapClick", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
+        menu.addItem(NSMenuItem(title: "Quit Magic Mouse Shortcuts", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
 
         for item in menu.items where item.action != nil && item.action != #selector(NSApplication.terminate(_:)) {
             item.target = self
@@ -486,7 +486,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
     private func updateIcon() {
         let symbol = Settings.enabled ? "cursorarrow.click" : "cursorarrow"
-        let image = NSImage(systemSymbolName: symbol, accessibilityDescription: "TapClick")
+        let image = NSImage(systemSymbolName: symbol, accessibilityDescription: "Magic Mouse Shortcuts")
         image?.isTemplate = true
         statusItem.button?.image = image
         statusItem.button?.appearsDisabled = !Settings.enabled
@@ -537,7 +537,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         } catch {
             let alert = NSAlert()
             alert.messageText = "Couldn't change Launch at Login"
-            alert.informativeText = "\(error.localizedDescription)\n\nMove TapClick.app to /Applications and try again."
+            alert.informativeText = "\(error.localizedDescription)\n\nMove MagicMouseShortcuts.app to /Applications and try again."
             alert.runModal()
         }
     }

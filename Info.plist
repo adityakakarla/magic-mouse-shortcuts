@@ -5,15 +5,15 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
-	<string>TapClick</string>
+	<string>MagicMouseShortcuts</string>
 	<key>CFBundleIdentifier</key>
-	<string>local.tapclick.TapClick</string>
+	<string>local.magicmouseshortcuts.MagicMouseShortcuts</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>TapClick</string>
+	<string>MagicMouseShortcuts</string>
 	<key>CFBundleDisplayName</key>
-	<string>TapClick</string>
+	<string>Magic Mouse Shortcuts</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>

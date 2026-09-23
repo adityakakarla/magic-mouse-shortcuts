@@ -1,4 +1,4 @@
-# TapClick
+# Magic Mouse Shortcuts
 
 A tiny menu bar app that adds **tap to click** and **pinch to zoom** to the Apple Magic Mouse.
 
@@ -11,15 +11,15 @@ A tiny menu bar app that adds **tap to click** and **pinch to zoom** to the Appl
 ## Build & install
 
 ```bash
-./build.sh             # builds build/TapClick.app
+./build.sh             # builds build/MagicMouseShortcuts.app
 ./build.sh --install   # also copies it to /Applications and launches it
 ```
 
 Requires the Xcode Command Line Tools (`xcode-select --install`) and macOS 13+.
 
 On first launch, macOS asks for **Accessibility** access (System Settings → Privacy & Security →
-Accessibility). Turn on TapClick, because it can't send clicks without it. The app is signed
-ad hoc, so after a rebuild you may have to remove TapClick from that list and add it again.
+Accessibility). Turn on Magic Mouse Shortcuts, because it can't send clicks without it. The app is signed
+ad hoc, so after a rebuild you may have to remove Magic Mouse Shortcuts from that list and add it again.
 
 ## Menu
 
@@ -29,7 +29,7 @@ wakes from sleep.
 
 ## Tuning & debugging
 
-Run `build/TapClick.app/Contents/MacOS/TapClick --debug` to log detected devices and every touch
+Run `build/MagicMouseShortcuts.app/Contents/MacOS/MagicMouseShortcuts --debug` to log detected devices and every touch
 (finger count, duration, whether it moved) and pinch start/end, and to see why a tap was or wasn't
 turned into a click. The thresholds are at the top of `TapEngine` and `ZoomEngine` in `Sources/main.swift`:
 
